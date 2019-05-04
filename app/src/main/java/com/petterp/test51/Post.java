@@ -4,6 +4,11 @@ import android.os.Handler;
 import android.os.Looper;
 
 import java.io.IOException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
@@ -20,7 +25,6 @@ public class Post {
     public interface post {
         void Ok(String res);
     }
-
     private Post() {
 
     }
@@ -30,7 +34,6 @@ public class Post {
     public static Post budler() {
         return Client.post;
     }
-
     public void setPost(final String url, final String json, final post p) {
         new Thread(new Runnable() {
             @Override
@@ -53,6 +56,18 @@ public class Post {
                 }
             }
         }).start();
+
+
+
+
+      /*  ThreadFactory namedThreadFactory = new ThreadFactoryBuilder()
+                .setNameFormat("demo-pool-%d").build();
+        ExecutorService singleThreadPool = new ThreadPoolExecutor(1, 1,
+                0L, TimeUnit.MILLISECONDS,
+                new LinkedBlockingQueue<Runnable>(1024), namedThreadFactory, new ThreadPoolExecutor.AbortPolicy());
+
+        singleThreadPool.execute(()-> System.out.println(Thread.currentThread().getName()));
+        singleThreadPool.shutdown();*/
     }
 
     private static class Client {
