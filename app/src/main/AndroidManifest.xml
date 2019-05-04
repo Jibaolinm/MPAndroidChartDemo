@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.petterp.test51">
+    package="com.petterp.guosai">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -13,17 +13,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".MainActivity" />
-        <activity android:name=".Main2Activity">
+        <activity android:name="com.petterp.guosai.ShujuFenxi.ShujuActivity" />
+        <activity android:name="com.petterp.guosai.Main2Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Environment.Environment" />
-        <activity android:name=".Environment.RealTime" />
-        <activity android:name=".LifeZhushou.LifeActivity"></activity>
+        <activity android:name="com.petterp.guosai.Environment.Environment" />
+        <activity android:name="com.petterp.guosai.Environment.RealTime" />
+        <activity android:name="com.petterp.guosai.LifeZhushou.LifeActivity"></activity>
     </application>
 
 </manifest>

@@ -15,7 +15,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 
-import com.petterp.test51.R;
+import com.petterp.guosai.R;
 
 import java.util.ArrayList;
 import java.util.List;
