@@ -4,6 +4,9 @@ import android.os.Handler;
 import android.os.Looper;
 
 import java.io.IOException;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
@@ -25,33 +28,24 @@ public class Post {
     }
 
     private Handler handler = new Handler(Looper.getMainLooper());
-
+    ExecutorService fool=Executors.newFixedThreadPool(1);
     public static Post budler() {
         return Client.post;
     }
     public void setPost(final String url, final String json, final post p) {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                RequestBody requestBody = RequestBody.create(MediaType.parse("application/json"), json);
-                Request request = new Request.Builder()
-                        .url(url)
-                        .post(requestBody)
-                        .build();
-                try {
-                    final String res = new OkHttpClient().newCall(request).execute().body().string();
-                    handler.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            p.Ok(res);
-                        }
-                    });
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+        fool.execute(() -> {
+            RequestBody requestBody = RequestBody.create(MediaType.parse("application/json"), json);
+            Request request = new Request.Builder()
+                    .url(url)
+                    .post(requestBody)
+                    .build();
+            try {
+                final String res = new OkHttpClient().newCall(request).execute().body().string();
+                handler.post(() -> p.Ok(res));
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-        }).start();
-
+        });
 
 
 

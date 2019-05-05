@@ -13,17 +13,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="com.petterp.guosai.ShujuFenxi.ShujuActivity" />
-        <activity android:name="com.petterp.guosai.Main2Activity">
+        <activity android:name=".ShujuFenxi.ShujuActivity" />
+        <activity android:name=".Main2Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.petterp.guosai.Environment.Environment" />
-        <activity android:name="com.petterp.guosai.Environment.RealTime" />
-        <activity android:name="com.petterp.guosai.LifeZhushou.LifeActivity"></activity>
+        <activity android:name=".Environment.Environment" />
+        <activity android:name=".Environment.RealTime" />
+        <activity android:name=".LifeZhushou.LifeActivity" />
+        <activity android:name=".GuosaiTest.WeatherActivity" />
+        <activity android:name=".GuosaiTest.WeiZhang.WeiZhangActivity"></activity>
     </application>
 
 </manifest>

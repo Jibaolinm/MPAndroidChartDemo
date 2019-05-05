@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.petterp.guosai.Environment.Environment;
+import com.petterp.guosai.GuosaiTest.WeatherActivity;
+import com.petterp.guosai.GuosaiTest.WeiZhang.WeiZhangActivity;
 import com.petterp.guosai.LifeZhushou.LifeActivity;
 import com.petterp.guosai.ShujuFenxi.ShujuActivity;
 
@@ -18,6 +20,8 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
         findViewById(R.id.shuju).setOnClickListener(this);
         findViewById(R.id.envir).setOnClickListener(this);
         findViewById(R.id.life).setOnClickListener(this);
+        findViewById(R.id.weather).setOnClickListener(this);
+        findViewById(R.id.weizhang).setOnClickListener(this);
     }
 
     @Override
@@ -26,6 +30,8 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
             case R.id.shuju:IntentPlay(ShujuActivity.class);break;
             case R.id.envir:IntentPlay(Environment.class);break;
             case R.id.life:IntentPlay(LifeActivity.class);break;
+            case R.id.weather:IntentPlay(WeatherActivity.class);break;
+            case R.id.weizhang:IntentPlay(WeiZhangActivity.class);break;
             default:break;
         }
     }
