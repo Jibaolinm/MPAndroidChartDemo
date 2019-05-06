@@ -1,4 +1,4 @@
-package com.petterp.guosai.GuosaiTest;
+package com.petterp.guosai.GuosaiTest.Weather;
 
 /**
  * @author Petterp on 2019/5/5

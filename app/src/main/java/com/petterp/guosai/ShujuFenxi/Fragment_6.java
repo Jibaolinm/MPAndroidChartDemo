@@ -21,7 +21,7 @@ import com.github.mikephil.charting.formatter.IValueFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import com.github.mikephil.charting.utils.ViewPortHandler;
 import com.google.gson.Gson;
-import com.petterp.guosai.Bean.AllcarBean;
+import com.petterp.guosai.Bean.AllcarWeizhang;
 import com.petterp.guosai.Post;
 import com.petterp.guosai.R;
 
@@ -95,7 +95,7 @@ public class Fragment_6 extends Fragment {
             @Override
             public void Ok(String res) {
                 Gson gson = new Gson();
-                AllcarBean bean = gson.fromJson(res, AllcarBean.class);
+                AllcarWeizhang bean = gson.fromJson(res, AllcarWeizhang.class);
                 if (bean.getERRMSG().equals("成功")) {
                     int size = bean.getROWS_DETAIL().size();
                     List<String> list = new ArrayList<>();

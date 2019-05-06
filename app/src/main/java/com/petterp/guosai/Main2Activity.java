@@ -1,12 +1,13 @@
 package com.petterp.guosai;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
 import com.petterp.guosai.Environment.Environment;
-import com.petterp.guosai.GuosaiTest.WeatherActivity;
+import com.petterp.guosai.GuosaiTest.Weather.WeatherActivity;
 import com.petterp.guosai.GuosaiTest.WeiZhang.WeiZhangActivity;
 import com.petterp.guosai.LifeZhushou.LifeActivity;
 import com.petterp.guosai.ShujuFenxi.ShujuActivity;
@@ -35,6 +36,14 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
             default:break;
         }
     }
+
+    private void IntentUrl() {
+        Uri uri=Uri.parse("qwe://www.baidu.com");
+        Intent intent=new Intent();
+        intent.setData(uri);
+        startActivity(intent);
+    }
+
     private void IntentPlay(Class c){
         Intent intent=new Intent(this,c);
         startActivity(intent);

@@ -1,4 +1,4 @@
-package com.petterp.guosai.GuosaiTest;
+package com.petterp.guosai.GuosaiTest.Weather;
 
 import android.app.ProgressDialog;
 import android.graphics.Color;
