@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/huanjiangjian_item_back"
+    android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:textSize="15sp"
+        android:id="@+id/item_title"
+        android:gravity="center"
+        android:text="雄安"
+        android:textColor="#000" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="生活指数"
+            android:textColor="#000"
+            android:textSize="15sp" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#000"/>
+
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:textColor="#000"
+            android:textSize="15sp"
+            android:text="最高"
+            android:gravity="center"
+            android:layout_height="match_parent" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#000"/>
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:textColor="#000"
+            android:textSize="15sp"
+            android:text="最低"
+            android:gravity="center"
+            android:layout_height="match_parent" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#000"/>
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="#000"
+            android:textSize="15sp"
+            android:text="平均值"
+            android:gravity="center"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:textColor="#000"
+            android:textSize="15sp"
+            android:text="PM2.5(μg/m3)"
+            android:gravity="center"
+            android:layout_height="match_parent" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#000"/>
+
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:textColor="#000"
+            android:id="@+id/pm_max"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_height="match_parent" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#000"/>
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:textColor="#000"
+            android:id="@+id/pm_min"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_height="match_parent" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#000"/>
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:textColor="#000"
+            android:id="@+id/pm_mean"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:textColor="#000"
+            android:textSize="15sp"
+            android:text="二氧化碳"
+            android:gravity="center"
+            android:layout_height="match_parent" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#000"/>
+
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:textColor="#000"
+            android:id="@+id/co_max"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_height="match_parent" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#000"/>
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:textColor="#000"
+            android:id="@+id/co_min"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_height="match_parent" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#000"/>
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:textColor="#000"
+            android:id="@+id/co_mean"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:textColor="#000"
+            android:textSize="15sp"
+            android:text="光照强度"
+            android:gravity="center"
+            android:layout_height="match_parent" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#000"/>
+
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:textColor="#000"
+            android:id="@+id/guang_max"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_height="match_parent" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#000"/>
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:textColor="#000"
+            android:id="@+id/guang_min"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_height="match_parent" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#000"/>
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:textColor="#000"
+            android:id="@+id/guang_mean"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:textColor="#000"
+            android:textSize="15sp"
+            android:text="温度"
+            android:gravity="center"
+            android:layout_height="match_parent" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#000"/>
+
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:textColor="#000"
+            android:id="@+id/shi_max"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_height="match_parent" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#000"/>
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:textColor="#000"
+            android:id="@+id/shi_min"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_height="match_parent" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#000"/>
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:textColor="#000"
+            android:id="@+id/shi_mean"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:textColor="#000"
+            android:textSize="15sp"
+            android:text="湿度"
+            android:gravity="center"
+            android:layout_height="match_parent" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#000"/>
+
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:id="@+id/wen_max"
+            android:gravity="center"
+            android:layout_height="match_parent" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#000"/>
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:textColor="#000"
+            android:id="@+id/wen_min"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_height="match_parent" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#000"/>
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:textColor="#000"
+            android:id="@+id/wen_mean"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000"
+        />
+</LinearLayout>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.petterp.guosai.GuosaiTest.HuanJingJiance.HuanJingjianActivity">
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="400dp"
+            android:text="5月30日 周二"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/time_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="最近更新：3分钟之前"
+            android:textSize="25sp"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:layout_marginTop="50dp"
+            android:id="@+id/chart"
+            android:layout_marginRight="50dp"
+            android:layout_toLeftOf="@id/huanjing_item"
+            android:layout_width="450dp"
+            android:layout_height="450dp" />
+        <include
+            android:id="@+id/huanjing_item"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="100dp"
+            android:layout_alignParentRight="true"
+            android:layout_width="400dp"
+            layout="@layout/huanjing_item_layout"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_below="@id/chart"
+            android:layout_marginRight="70dp"
+            android:layout_marginTop="20dp"
+            android:layout_toLeftOf="@id/huanjing_item"
+            android:layout_height="wrap_content">
+            <View
+                android:layout_width="40dp"
+                android:background="#91C7AE"
+                android:layout_height="25dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:layout_marginRight="5dp"
+                android:layout_gravity="center"
+                android:textColor="#000"
+                android:text="北京"/>
+            <View
+                android:layout_width="40dp"
+                android:background="#D48265"
+                android:layout_height="25dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:layout_marginRight="5dp"
+                android:layout_gravity="center"
+                android:textColor="#000"
+                android:text="上海"/>
+            <View
+                android:layout_width="40dp"
+                android:background="#61A0A8"
+                android:layout_height="25dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:layout_marginRight="5dp"
+                android:layout_gravity="center"
+                android:textColor="#000"
+                android:text="深圳"/>
+            <View
+                android:layout_width="40dp"
+                android:background="#2F4554"
+                android:layout_height="25dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:layout_marginRight="5dp"
+                android:layout_gravity="center"
+                android:textColor="#000"
+                android:text="重庆"/>
+            <View
+                android:layout_width="40dp"
+                android:background="#C23531"
+                android:layout_height="25dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:layout_marginRight="5dp"
+                android:layout_gravity="center"
+                android:textColor="#000"
+                android:text="雄安"/>
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

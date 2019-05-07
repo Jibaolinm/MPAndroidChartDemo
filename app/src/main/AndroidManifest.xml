@@ -26,19 +26,20 @@
         <activity android:name=".LifeZhushou.LifeActivity" />
         <activity android:name=".GuosaiTest.Weather.WeatherActivity" />
         <activity android:name=".GuosaiTest.WeiZhang.WeiZhangActivity" />
-        <activity android:name=".GuosaiTest.Zhizhutu.WeiZhanglei"/>
+        <activity android:name=".GuosaiTest.Zhizhutu.WeiZhanglei" />
         <activity android:name=".Test">
             <intent-filter>
-                <action android:name="android.intent.action.VIEW"></action>
-                <category android:name="android.intent.category.DEFAULT"></category>
-                <category android:name="android.intent.category.BROWSABLE"></category>
-                <data
-                    android:scheme="qwe"
-                    android:host="www.baidu.com">
-                </data>
-            </intent-filter>
+                <action android:name="android.intent.action.VIEW" />
 
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="www.baidu.com"
+                    android:scheme="qwe"></data>
+            </intent-filter>
         </activity>
+        <activity android:name=".GuosaiTest.HuanJingJiance.HuanJingjianActivity"></activity>
     </application>
 
 </manifest>
