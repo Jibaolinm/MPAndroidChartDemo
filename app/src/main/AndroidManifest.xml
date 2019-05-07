@@ -26,6 +26,7 @@
         <activity android:name=".LifeZhushou.LifeActivity" />
         <activity android:name=".GuosaiTest.Weather.WeatherActivity" />
         <activity android:name=".GuosaiTest.WeiZhang.WeiZhangActivity" />
+        <activity android:name=".GuosaiTest.Zhizhutu.WeiZhanglei"/>
         <activity android:name=".Test">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"></action>

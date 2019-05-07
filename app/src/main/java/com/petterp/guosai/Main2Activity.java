@@ -9,6 +9,7 @@ import android.view.View;
 import com.petterp.guosai.Environment.Environment;
 import com.petterp.guosai.GuosaiTest.Weather.WeatherActivity;
 import com.petterp.guosai.GuosaiTest.WeiZhang.WeiZhangActivity;
+import com.petterp.guosai.GuosaiTest.Zhizhutu.WeiZhanglei;
 import com.petterp.guosai.LifeZhushou.LifeActivity;
 import com.petterp.guosai.ShujuFenxi.ShujuActivity;
 
@@ -32,7 +33,7 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
             case R.id.envir:IntentPlay(Environment.class);break;
             case R.id.life:IntentPlay(LifeActivity.class);break;
             case R.id.weather:IntentPlay(WeatherActivity.class);break;
-            case R.id.weizhang:IntentPlay(WeiZhangActivity.class);break;
+            case R.id.weizhang:IntentPlay(WeiZhanglei.class);break;
             default:break;
         }
     }
