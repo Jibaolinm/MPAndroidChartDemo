@@ -2,7 +2,7 @@ package com.petterp.guosai.GuosaiTest.HuanJingJiance;
 
 /**
  * @author Petterp on 2019/5/7
- * Summary:
+ * Summary:Bean类
  * 邮箱：1509492795@qq.com
  */
 public class Frits {

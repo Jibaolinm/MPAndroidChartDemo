@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  * @author Petterp on 2019/5/7
- * Summary:
+ * Summary:静态数据类，用来替代数据库
  * 邮箱：1509492795@qq.com
  */
 public class UserBean {

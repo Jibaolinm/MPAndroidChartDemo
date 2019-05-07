@@ -1,6 +1,7 @@
 package com.petterp.guosai.GuosaiTest.HuanJingJiance;
 
 import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
@@ -9,6 +10,8 @@ import android.os.CountDownTimer;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.PieChart;
@@ -37,7 +40,7 @@ import java.util.concurrent.Executor;
  * 使用Frits当做Bean类存储数据，使用List来切合数据
  */
 public class HuanJingjianActivity extends AppCompatActivity {
-
+    private ProgressDialog progressDialog;
     private TextView time;
     private TextView timeUpdate;
     private PieChart chart;
@@ -66,7 +69,7 @@ public class HuanJingjianActivity extends AppCompatActivity {
     private int d;
     private int e;
     private CountDownTimer count;
-
+    private LinearLayout item;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -107,8 +110,16 @@ public class HuanJingjianActivity extends AppCompatActivity {
         wenMax = (TextView) findViewById(R.id.wen_max);
         wenMin = (TextView) findViewById(R.id.wen_min);
         wenMean = (TextView) findViewById(R.id.wen_mean);
+        item=findViewById(R.id.item);
+        progressDialog=new ProgressDialog(this);
+        progressDialog.setMessage("正在请求数据");
+        progressDialog.setTitle("Loading///");
+        progressDialog.show();
     }
 
+    /**
+     * 网络请求，当i=4的时候刷新mp
+     */
     private void setPost() {
         for (int i = 0; i < 5; i++) {
             int finalI = i;
@@ -129,6 +140,7 @@ public class HuanJingjianActivity extends AppCompatActivity {
                             if (mode){
                                 setItem();
                             }
+                            progressDialog.dismiss();
                         }
                     }
                 } catch (JSONException e) {
@@ -138,6 +150,9 @@ public class HuanJingjianActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * 一些配置数据，颜色数组，mp的一些基本配置及扇形点击事件
+     */
     private void initChart() {
         chart.setDrawHoleEnabled(false);
         chart.setDrawCenterText(false);
@@ -149,6 +164,7 @@ public class HuanJingjianActivity extends AppCompatActivity {
         chart.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
             @Override
             public void onValueSelected(Entry entry, Highlight highlight) {
+                item.setVisibility(View.VISIBLE);
                 if (entry.getY() == a) {
                     modelist=UserBean.BEIJING;
                     itemTitle.setText("北京");
@@ -179,6 +195,11 @@ public class HuanJingjianActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * 数据存储的时候，需要通过相应的下标确定给谁存
+     * @param postion
+     * @param frits
+     */
     private void setSave(int postion, Frits frits) {
         switch (postion) {
             case 0:
@@ -201,6 +222,9 @@ public class HuanJingjianActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * 设置MP的数据
+     */
     private void setData() {
         List<PieEntry> list = new ArrayList<>();
         int size = UserBean.BEIJING.size() - 1;
@@ -240,6 +264,10 @@ public class HuanJingjianActivity extends AppCompatActivity {
         chart.invalidate();
     }
 
+    /**
+     * 设置子项Item
+     * 排序比较，然后将数据显示在item里面
+     */
     @SuppressLint("SetTextI18n")
     private void setItem() {
         int[] sums = new int[5];
@@ -280,6 +308,10 @@ public class HuanJingjianActivity extends AppCompatActivity {
         wenMin.setText("" + modelist.get(size - 1).wen);
         wenMean.setText("" + modes[4]);
     }
+
+    /**
+     * 设置时间
+     */
     @SuppressLint("SetTextI18n")
     private void setTime(){
         SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy年MM月dd日 HH:mm");
