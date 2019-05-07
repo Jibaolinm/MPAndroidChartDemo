@@ -11,4 +11,5 @@ public class Frits {
     public int guang;
     public int shi;
     public int wen;
+    //sdads
 }
