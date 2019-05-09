@@ -63,11 +63,11 @@ public class HuanJingjianActivity extends AppCompatActivity {
     private List<Integer> colors = new ArrayList<>();
     private boolean mode = false;
     private List<Frits> modelist;
-    private int a;
-    private int b;
-    private int c;
-    private int d;
-    private int e;
+    private float a;
+    private float b;
+    private float c;
+    private float d;
+    private float e;
     private CountDownTimer count;
     private LinearLayout item;
     @Override
@@ -110,11 +110,13 @@ public class HuanJingjianActivity extends AppCompatActivity {
         wenMax = (TextView) findViewById(R.id.wen_max);
         wenMin = (TextView) findViewById(R.id.wen_min);
         wenMean = (TextView) findViewById(R.id.wen_mean);
-        item=findViewById(R.id.item);
+        item=findViewById(R.id.huanjing_item);
         progressDialog=new ProgressDialog(this);
         progressDialog.setMessage("正在请求数据");
         progressDialog.setTitle("Loading///");
         progressDialog.show();
+        chart.getLegend().setEnabled(false);
+        chart.getDescription().setEnabled(false);
     }
 
     /**
@@ -123,7 +125,7 @@ public class HuanJingjianActivity extends AppCompatActivity {
     private void setPost() {
         for (int i = 0; i < 5; i++) {
             int finalI = i;
-            Post.budler().setPost("http://192.168.1.104:8088/transportservice/action/GetAllSense.do", "{\"UserName\":\"user1\"}", res -> {
+            Post.budler().setPost("http://192.168.1.101:8088/transportservice/action/GetAllSense.do", "{\"UserName\":\"user1\"}", res -> {
                 JSONObject jsonObject = null;
                 try {
                     jsonObject = new JSONObject(res);
@@ -138,6 +140,7 @@ public class HuanJingjianActivity extends AppCompatActivity {
                         if (finalI == 4) {
                             setData();
                             if (mode){
+                                Log.e("demo","执行");
                                 setItem();
                             }
                             progressDialog.dismiss();
@@ -165,6 +168,7 @@ public class HuanJingjianActivity extends AppCompatActivity {
             @Override
             public void onValueSelected(Entry entry, Highlight highlight) {
                 item.setVisibility(View.VISIBLE);
+                mode=true;
                 if (entry.getY() == a) {
                     modelist=UserBean.BEIJING;
                     itemTitle.setText("北京");
@@ -193,6 +197,7 @@ public class HuanJingjianActivity extends AppCompatActivity {
 
             }
         });
+        chart.setExtraOffsets(15,15,15,15);
     }
 
     /**
@@ -228,11 +233,11 @@ public class HuanJingjianActivity extends AppCompatActivity {
     private void setData() {
         List<PieEntry> list = new ArrayList<>();
         int size = UserBean.BEIJING.size() - 1;
-        a = UserBean.BEIJING.get(size).pm;
-        b = UserBean.SHANGHAI.get(size).pm;
-        c = UserBean.SHENGZHENG.get(size).pm;
-        d = UserBean.CHONGQING.get(size).pm;
-        e = UserBean.XUNAN.get(size).pm;
+        a = (float) (UserBean.BEIJING.get(size).pm+0.01);
+        b = (float) (UserBean.SHANGHAI.get(size).pm+0.02);
+        c = (float) (UserBean.SHENGZHENG.get(size).pm+0.03);
+        d = (float) (UserBean.CHONGQING.get(size).pm+0.04);
+        e = (float) (UserBean.XUNAN.get(size).pm+0.05);
         list.add(new PieEntry(a));
         list.add(new PieEntry(b));
         list.add(new PieEntry(c));
@@ -259,7 +264,10 @@ public class HuanJingjianActivity extends AppCompatActivity {
         set.setValueLinePart1OffsetPercentage(100f);
         set.setValueLinePart1Length(0.7f);
         set.setValueLinePart2Length(0.2f);
+        set.setYValuePosition(PieDataSet.ValuePosition.OUTSIDE_SLICE);
+        set.setXValuePosition(PieDataSet.ValuePosition.OUTSIDE_SLICE);
         PieData data = new PieData(set);
+        data.setValueTextSize(15f);
         chart.setData(data);
         chart.invalidate();
     }
@@ -321,7 +329,7 @@ public class HuanJingjianActivity extends AppCompatActivity {
         long spTime=data.getLong("time",timexin);
         int mode= (int) ((timexin-spTime)/1000);
         if (mode>60){
-            timeUpdate.setText("最近更新："+mode+"分钟之前");
+            timeUpdate.setText("最近更新："+(mode/60)+"分钟之前");
         }else{
             timeUpdate.setText("最近更新：最新数据");
         }

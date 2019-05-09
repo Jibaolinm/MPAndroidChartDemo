@@ -1,10 +1,13 @@
 package com.petterp.guosai;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.petterp.guosai.Environment.Environment;
 import com.petterp.guosai.GuosaiTest.HuanJingJiance.HuanJingjianActivity;
@@ -26,6 +29,13 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
         findViewById(R.id.weather).setOnClickListener(this);
         findViewById(R.id.weizhang).setOnClickListener(this);
         findViewById(R.id.huanjing).setOnClickListener(this);
+        SharedPreferences.Editor shar=getSharedPreferences("data",MODE_PRIVATE).edit();
+        PostUtils.Builder().setOkHttpClient("GetCarInfo.do", "{\"UserName\":\"user1\"}", new PostUtils.Post() {
+            @Override
+            public void success(String s) {
+                Log.e("demo",s);
+            }
+        });
     }
 
     @Override

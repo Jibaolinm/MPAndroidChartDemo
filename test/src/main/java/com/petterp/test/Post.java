@@ -1,12 +1,9 @@
-package com.petterp.guosai;
+package com.petterp.test;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Handler;
 import android.os.Looper;
 
 import java.io.IOException;
-import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -28,24 +25,12 @@ public class Post {
     private Post() {
 
     }
-    private Context context;
-
-    public Context getContext() {
-        return context;
-    }
-
-    public Post setContext(Context context) {
-        this.context = context;
-        return this;
-    }
-
 
     private Handler handler = new Handler(Looper.getMainLooper());
     ExecutorService fool=Executors.newFixedThreadPool(1);
     public static Post budler() {
         return Client.post;
     }
-
     public void setPost(final String url, final String json, final post p) {
         fool.execute(() -> {
             RequestBody requestBody = RequestBody.create(MediaType.parse("application/json"), json);
