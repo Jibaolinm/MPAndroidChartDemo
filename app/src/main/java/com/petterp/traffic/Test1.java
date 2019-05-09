@@ -130,6 +130,8 @@ public class Test1 extends Fragment {
         LinearLayout linear1;
         TextView tv_number2;
         LinearLayout linear2;
+
+        //测试
         @Override
         public int getCount() {
             return list.size();
