@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="#fff"
+    android:layout_height="match_parent">
+    <include layout="@layout/layout_title_item" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_height="match_parent">
+        <EditText
+            android:hint="请输入用户名"
+            android:textColorHint="#000"
+            android:id="@+id/edit_name"
+            android:inputType="textPersonName"
+            android:background="@drawable/login_edit"
+            android:textSize="25sp"
+            android:layout_width="400dp"
+            android:layout_height="70dp" />
+
+        <EditText
+            android:id="@+id/edit_email"
+            android:hint="请输入邮箱"
+            android:textColorHint="#000"
+            android:layout_width="400dp"
+            android:inputType="numberPassword"
+            android:background="@drawable/login_edit"
+            android:textSize="25sp"
+            android:layout_marginTop="40dp"
+            android:layout_height="70dp" />
+        <Button
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:textSize="25sp"
+            android:text="找回"
+            android:textColor="#000"
+            android:id="@+id/login_btn"
+            android:background="@drawable/login_btn"
+            android:layout_marginTop="50dp"
+            />
+    </LinearLayout>
+</LinearLayout>

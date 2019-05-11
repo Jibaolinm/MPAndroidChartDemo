@@ -10,7 +10,9 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.petterp.guosai.Environment.Environment;
+import com.petterp.guosai.GuosaiTest.DingzhiBanChe.DinzhiActivity;
 import com.petterp.guosai.GuosaiTest.HuanJingJiance.HuanJingjianActivity;
+import com.petterp.guosai.GuosaiTest.Login.LoginActivity;
 import com.petterp.guosai.GuosaiTest.Weather.WeatherActivity;
 import com.petterp.guosai.GuosaiTest.WeiZhang.WeiZhangActivity;
 import com.petterp.guosai.GuosaiTest.Zhizhutu.WeiZhanglei;
@@ -29,6 +31,8 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
         findViewById(R.id.weather).setOnClickListener(this);
         findViewById(R.id.weizhang).setOnClickListener(this);
         findViewById(R.id.huanjing).setOnClickListener(this);
+        findViewById(R.id.login).setOnClickListener(this);
+        findViewById(R.id.dingzhi).setOnClickListener(this);
         SharedPreferences.Editor shar=getSharedPreferences("data",MODE_PRIVATE).edit();
         PostUtils.Builder().setOkHttpClient("GetCarInfo.do", "{\"UserName\":\"user1\"}", new PostUtils.Post() {
             @Override
@@ -47,16 +51,12 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
             case R.id.weather:IntentPlay(WeatherActivity.class);break;
             case R.id.weizhang:IntentPlay(WeiZhanglei.class);break;
             case R.id.huanjing:IntentPlay(HuanJingjianActivity.class);break;
+            case R.id.login:IntentPlay(LoginActivity.class);break;
+            case R.id.dingzhi:IntentPlay(DinzhiActivity.class);break;
             default:break;
         }
     }
 
-    private void IntentUrl() {
-        Uri uri=Uri.parse("qwe://www.baidu.com");
-        Intent intent=new Intent();
-        intent.setData(uri);
-        startActivity(intent);
-    }
 
     private void IntentPlay(Class c){
         Intent intent=new Intent(this,c);

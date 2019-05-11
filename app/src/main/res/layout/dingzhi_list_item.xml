@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/dingzhi_list_id"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:background="@drawable/dingzhi_name_id"
+        android:gravity="center"
+        android:padding="30dp"
+        android:text="1号线"
+        android:textColor="#000"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/dingzhi_list_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="300dp"
+        android:gravity="center"
+        android:text="光谷金融街-南湖商厦"
+        android:textColor="#000"
+        android:textSize="30sp" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dingzhi_list_name"
+        android:layout_alignLeft="@id/dingzhi_list_name"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="票价-南湖商厦"
+        android:id="@+id/ppp"
+        android:textColor="#000"
+        android:textSize="30dp" />
+
+    <TextView
+        android:id="@+id/dingzhi_list_time1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="20dp"
+        android:drawableLeft="@drawable/time1"
+        android:gravity="center"
+        android:text="06:45-19:45"
+        android:textColor="#000"
+        android:textSize="35sp" />
+
+    <TextView
+        android:id="@+id/dingzhi_list_time2"
+        android:layout_below="@id/dingzhi_list_time1"
+        android:layout_alignLeft="@id/dingzhi_list_time1"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/time1"
+        android:gravity="center"
+        android:text="06:45-19:45"
+        android:textColor="#000"
+        android:textSize="35sp" />
+</RelativeLayout>

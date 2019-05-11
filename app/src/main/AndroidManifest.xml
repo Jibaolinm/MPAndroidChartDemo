@@ -6,10 +6,10 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:name="com.petterp.guosai.MyApplication"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
@@ -28,7 +28,9 @@
         <activity android:name=".GuosaiTest.Weather.WeatherActivity" />
         <activity android:name=".GuosaiTest.WeiZhang.WeiZhangActivity" />
         <activity android:name=".GuosaiTest.Zhizhutu.WeiZhanglei" />
-        <activity android:name=".GuosaiTest.HuanJingJiance.HuanJingjianActivity"></activity>
+        <activity android:name=".GuosaiTest.HuanJingJiance.HuanJingjianActivity" />
+        <activity android:name=".GuosaiTest.Login.LoginActivity"></activity>
+        <activity android:name=".GuosaiTest.DingzhiBanChe.DinzhiActivity"></activity>
     </application>
 
 </manifest>

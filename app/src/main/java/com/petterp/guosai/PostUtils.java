@@ -1,8 +1,6 @@
 package com.petterp.guosai;
 
 import android.annotation.SuppressLint;
-import android.app.Application;
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Handler;
 import android.os.Looper;
@@ -43,7 +41,7 @@ public class PostUtils {
             RequestBody body = RequestBody.create(JSON, neirong);
             Request request = new Request
                     .Builder()
-                    .url("http://" + data.getString("IP", "192.168.1.101") + ":8088/transportservice/action/" + url)
+                    .url("http://" + data.getString("IP", "192.168.1.105") + ":8088/transportservice/action/" + url)
                     .post(body)
                     .build();
             try {
